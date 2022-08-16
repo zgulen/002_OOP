@@ -85,11 +85,50 @@ class Person:
 
     def get_details(self):
         print(self.name, self.age)
-        
-person1 = Person("zübeyir", 31)
-person1._id = 3535
-print(person1._id)
-print(person1.__id)
+
+# person1 = Person("zübeyir", 31)
+# person1._id = 3535
+# person1._Person__id = 3235
+# print(person1._id)
+# print(person1._Person__id)
+
+
+#! Abstraction
+liste = [4, 3, 2, 1, 5]
+liste.sort()
+print(liste)
+
+#! inheritance an polymorphism
+
+
+class Employee(Person):
+    def __init__(self, name, age, path):
+        # self.name = name
+        # self.age = age
+        super().__init__(name,age)
+        self.path = path
+    
+    def get_details(self):
+        print(self.name, self.age, self.path)
+
+emp1 = Employee("zübeyir", 31, "FS")
+emp1.get_details()
+print(emp1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 print("-----------------------------------")
