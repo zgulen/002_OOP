@@ -1,4 +1,3 @@
-from cgi import test
 import os
 os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -110,7 +109,7 @@ class Lang:
 
 
 class Employee(Person, Lang):
-    def __init__(self, name, age, path,langs):
+    def __init__(self, name, age, path, langs):
         # self.name = name
         # self.age = age
         super().__init__(name, age)
@@ -128,5 +127,18 @@ emp1 = Employee("zübeyir", 31, "FS", ["python", "javaScript"])
 emp1.get_details()
 emp1.display_lang()
 
+#! inner Class
+
+# from django.db import models
+
+# class Article(models.model):
+#     name = models.CharField(max_length=50)
+#     author = models.CharField(max_length=50)
+
+#     class Meta:
+#         ordering = ["name"]
+
+print(Employee.mro())
+print(help(Employee))
 
 print("-----------------------------------")
