@@ -101,34 +101,32 @@ print(liste)
 #! inheritance an polymorphism
 
 
-class Employee(Person):
-    def __init__(self, name, age, path):
+class Lang:
+    def __init__(self, langs):
+        self.langs = langs
+
+    def display_lang(self):
+        print(self.langs)
+
+
+class Employee(Person, Lang):
+    def __init__(self, name, age, path,langs):
         # self.name = name
         # self.age = age
-        super().__init__(name,age)
+        super().__init__(name, age)
         self.path = path
-    
+        # self.lang = lang
+        Lang.__init__(self, langs)
+
     def get_details(self):
-        print(self.name, self.age, self.path)
+        # print(self.name, self.age, self.path)
+        super().get_details()
+        print(f"Path: {self.path} - Langs:{self.langs}")
 
-emp1 = Employee("zübeyir", 31, "FS")
+
+emp1 = Employee("zübeyir", 31, "FS", ["python", "javaScript"])
 emp1.get_details()
-print(emp1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+emp1.display_lang()
 
 
 print("-----------------------------------")
